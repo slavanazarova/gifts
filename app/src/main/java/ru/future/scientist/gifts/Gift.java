@@ -9,9 +9,8 @@ public class Gift {
     private String pathImage;
     private boolean reserved;
 
-    public Gift(String name, String note, String pathImage, boolean reserved)
-    {
-        this(0, name, note, pathImage, reserved)
+    public Gift(String name, String note, String pathImage, boolean reserved) {
+        this(0, name, note, pathImage, reserved);
     }
 
     public Gift(long id, String name, String note, String pathImage, boolean reserved) {
@@ -66,7 +65,7 @@ public class Gift {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        gift gift = (gift) o;
+        Gift gift = (Gift) o;
         return id == gift.id &&
                 reserved == gift.reserved &&
                 Objects.equals(name, gift.name) &&
