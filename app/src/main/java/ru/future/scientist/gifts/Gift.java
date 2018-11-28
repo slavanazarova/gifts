@@ -79,3 +79,8 @@ public class Gift {
         return Objects.hash(id, name, note, pathImage, reserved);
     }
 }
+
+
+
+
+
