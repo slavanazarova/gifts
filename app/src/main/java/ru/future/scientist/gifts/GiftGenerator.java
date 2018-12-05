@@ -35,4 +35,8 @@ public class GiftGenerator {
         }
         return gifts;
     }
+
+    public String getAvatarLink(){
+        return images[random.nextInt(images.length)];
+    }
 }
