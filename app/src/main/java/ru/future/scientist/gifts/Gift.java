@@ -2,13 +2,22 @@ package ru.future.scientist.gifts;
 
 import java.util.Objects;
 
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+
+     @Entity(tableName = "gifts")
 public class Gift {
+    @PrimaryKey(autoGenerate = true)
     private long id;
     private String name;
     private String note;
     private String pathImage;
     private boolean reserved;
 
+
+    @Ignore
     public Gift(String name, String note, String pathImage, boolean reserved) {
         this(0, name, note, pathImage, reserved);
     }

@@ -19,7 +19,7 @@ public class AddGiftActivity extends AppCompatActivity {
     private TextInputLayout tilName;
     private TextInputLayout tilNote;
     private GiftGenerator generator = new GiftGenerator();
-    private String avatarLink = "";
+    private String imageLink = "";
 
     public static Intent getStartIntent(Context context) {
         return new Intent(context, AddGiftActivity.class);
@@ -59,8 +59,8 @@ public class AddGiftActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.actionAdd) {
             String name = tilName.getEditText().getText().toString();
             String note = tilNote.getEditText().getText().toString();
-            Gift person = new Gift(name, note, ivImage, false);
-            AppDatabase.getInstance(this).personDao().insertPerson(person);
+            Gift person = new Gift(name, note, imageLink, false);
+//            AppDatabase.getInstance(this).personDao().insertPerson(person);
             finish();
             return true;
         } else {
@@ -69,15 +69,14 @@ public class AddGiftActivity extends AppCompatActivity {
     }
 
     private void loadImage(String link) {
-        avatarLink = link;
-        Picasso.get().load(avatarLink)
+        imageLink = link;
+        Picasso.get().load(imageLink)
                 .placeholder(R.drawable.ic_launcher_background)
                 .error(R.drawable.ic_launcher_background)
                 .fit()
                 .centerCrop()
                 .into(ivImage);
     }
-
-
-
 }
+
+
