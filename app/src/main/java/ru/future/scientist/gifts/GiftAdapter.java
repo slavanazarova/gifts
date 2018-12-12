@@ -13,14 +13,22 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class GiftAdapter extends RecyclerView.Adapter<GiftAdapter.GiftViewHolder>{
-
+    public class GiftAdapter extends RecyclerView.Adapter<GiftAdapter.GiftViewHolder>{
+    private OnItemClickListener itemClickListener;
 
     List<Gift> gifts;
 
-    public GiftAdapter(List<Gift> gifts) {
+    public GiftAdapter(List<Gift> gifts, OnItemClickListener itemClickListener) {
+
         this.gifts = gifts;
+        this.itemClickListener = itemClickListener;
     }
+
+
+    public interface OnItemClickListener {
+        void onItemClick(Gift item);
+    }
+
 
     @NonNull
     @Override
@@ -29,9 +37,17 @@ public class GiftAdapter extends RecyclerView.Adapter<GiftAdapter.GiftViewHolder
         return new GiftViewHolder(view);
     }
 
+
+    public void update(List<Gift> people){
+        this.gifts.clear();
+        this.gifts.addAll(people);
+        notifyDataSetChanged();
+    }
+
+
     @Override
     public void onBindViewHolder(@NonNull GiftViewHolder holder, int position) {
-        holder.bind(gifts.get(position));
+        holder.bind(gifts.get(position), itemClickListener);
     }
 
     @Override
@@ -50,7 +66,8 @@ public class GiftAdapter extends RecyclerView.Adapter<GiftAdapter.GiftViewHolder
             tvGiftName = itemView.findViewById(R.id.tvGiftName);
         }
 
-        public void bind(Gift gift) {
+        public void bind(Gift gift, final OnItemClickListener itemClickListener){
+            itemView.setOnClickListener(v -> itemClickListener.onItemClick(gift));
             tvGiftName.setText(gift.getName());
             Picasso.get().load(gift.getPathImage())
                     .placeholder(R.drawable.ic_launcher_background)

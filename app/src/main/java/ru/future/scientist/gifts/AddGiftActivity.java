@@ -59,8 +59,8 @@ public class AddGiftActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.actionAdd) {
             String name = tilName.getEditText().getText().toString();
             String note = tilNote.getEditText().getText().toString();
-            Gift person = new Gift(name, note, imageLink, false);
-//            AppDatabase.getInstance(this).personDao().insertPerson(person);
+            Gift gift = new Gift(name, note, imageLink, false);
+            AppDatabase.getInstance(this).giftDao().insertGift(gift);
             finish();
             return true;
         } else {

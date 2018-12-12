@@ -9,9 +9,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import java.util.List;
 
 
 public class GiftsActivity extends AppCompatActivity {
@@ -34,11 +38,27 @@ public class GiftsActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        updateList();
+    }
+
+    private void updateList() {
+        List<Gift> people = AppDatabase.getInstance(this).giftDao().getAll();
+        adapter.update(people);
+    }
+
+
+
     private  void  initList(){
         RecyclerView rvGifts = findViewById(R.id.rvGift);
         rvGifts.setHasFixedSize(true);
         rvGifts.setLayoutManager(new GridLayoutManager(this, 3));
-        adapter = new GiftAdapter(generator.getGifts(15));
+        List<Gift> gifts = AppDatabase.getInstance(this).giftDao().getAll();
+        adapter = new GiftAdapter(gifts, item -> {
+            Toast.makeText(this, item.getName(), Toast.LENGTH_LONG).show();
+        });
         rvGifts.setAdapter(adapter);
     }
 }
