@@ -16,7 +16,7 @@ public class GiftGenerator {
             "https://cdn.dribbble.com/users/588874/screenshots/2249423/dribbble_1x.png",
             "https://avatarko.ru/img/kartinka/32/Star_Wars_pistolet_31680.jpg",
             "http://weclipart.com/gimg/31A72F8B8986D00C/obiwan_kenobi_rots_by_kaal_jhyy.jpg"};
-    private static final String[] notes = new String[]{"Размер: 36, цена: 3000", "Для Айфона", "",};
+    private static final String[] notes = new String[]{"Avoun", "Спортмастер", "H&M", "Litres", "Коркунов", "Окей" };
 
 
     private Random random = new Random();

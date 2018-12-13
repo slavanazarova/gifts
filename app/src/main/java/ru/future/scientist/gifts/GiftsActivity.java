@@ -57,7 +57,8 @@ public class GiftsActivity extends AppCompatActivity {
         rvGifts.setLayoutManager(new GridLayoutManager(this, 3));
         List<Gift> gifts = AppDatabase.getInstance(this).giftDao().getAll();
         adapter = new GiftAdapter(gifts, item -> {
-            Toast.makeText(this, item.getName(), Toast.LENGTH_LONG).show();
+            final Intent intent = GiftDetails.getStartIntent(this, item.getId());
+            startActivity(intent);
         });
         rvGifts.setAdapter(adapter);
     }

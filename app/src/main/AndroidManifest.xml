@@ -23,7 +23,6 @@
         </activity>
         <activity android:name=".AddGiftActivity" />
         <activity android:name=".GiftDetails" />
-        <activity android:name=".GiftDetsails"></activity>
     </application>
 
 </manifest>
