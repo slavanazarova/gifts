@@ -6,17 +6,18 @@ import java.util.Random;
 
 public class GiftGenerator {
 
-    private static final String[] names = new String[]{"Мишка", "Сапожки", "Духи", "Конфеты", "Книга", "Мороженное", "Чехол для телефона", "Ананас"};
-    private static final String[] images = new String[]{
-            "https://www.prohandmade.ru/wp-content/uploads/2015/09/starwarsiconsawakens-16-900x900.png",
-            "http://img.scoop.it/GroGTPKlZ4COVytp24pJdoXXXL4j3HpexhjNOf_P3YmryPKwJ94QGRtDb3Sbc6KY",
-            "https://storage.googleapis.com/replit/images/1509526663063_78cee07358a3fd43480ae7fa5b4d76e3.png",
-            "https://yt3.ggpht.com/a-/AJLlDp13bM8yFuEE7HVlYHFt7zvZPSMWbGEz4OrxOw=s900-mo-c-c0xffffffff-rj-k-no",
-            "http://comic-cons.xyz/wp-content/uploads/Star-Wars-avatar-icon-Ewok.png",
-            "https://cdn.dribbble.com/users/588874/screenshots/2249423/dribbble_1x.png",
-            "https://avatarko.ru/img/kartinka/32/Star_Wars_pistolet_31680.jpg",
-            "http://weclipart.com/gimg/31A72F8B8986D00C/obiwan_kenobi_rots_by_kaal_jhyy.jpg"};
-    private static final String[] notes = new String[]{"Avoun", "Спортмастер", "H&M", "Litres", "Коркунов", "Окей" };
+    private static final String[] names = new String[]{"Мишка", "Сапожки", "Духи", "Конфеты", "Книга", "Мороженое", "Чехол", "Ананас"};
+    private static final String[] images = new String[] {
+        "http://i3.stat01.com/1/1719/17184668/afacdb/120-sm-3900-140-sm-5900-160-sm-6900-200-sm-8900-jpg.jpg",
+        "https://s1.kaercher-media.com/products/00174520/main/2/d0.jpg",
+        "https://mylitta.ru/uploads/posts/2012-03/1330601806_guerlain-shalimar-4.jpg" ,
+        "https://besplatka.ua/aws/24/74/99/28/prodavec---konsultant---konfety-trc---karavan---m-photo-e597.jpg",
+        "http://www.al24.ru/wp-content/uploads/2014/09/preview.jpg",
+        "http://verytiksi.ru/_nw/2/98861.jpg" ,
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRwcjKKSWsa7OaDzG-S5Tg1whqpPKJ0DCyUOVY_29QPCXzz3efaw",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBv56RwFzKfP8su7-v7pCTd5IbHIg0NF-ANN96v4wD9MFWCo2l"
+    };
+    private static final String[] notes = new String[]{"Rich Toys","Мосье Башмаков", "Avoun","Коркунов","Litres", "Джелато", "H&M", "Окей" };
 
 
     private Random random = new Random();
